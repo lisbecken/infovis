@@ -43,3 +43,82 @@
     .size("Cantidad")      // sizing of blocks
     .draw()             // finally, draw the visualization!
 </script>
+  
+<!-- load D3js -->
+<script src="//d3plus.org/js/d3.js"></script>
+
+<!-- load D3plus after D3js -->
+<script src="//d3plus.org/js/d3plus.js"></script>
+
+<!-- create container element for visualization -->
+
+<h1>Cantidad de consultas por barrio</h1>
+  <div id="viz2"></div>
+<script>
+  // sample data array
+  var sample_data = [
+    {"Barrio":"PALERMO","Cantidad":316242},
+{"Barrio":"RECOLETA","Cantidad":227244},
+{"Barrio":"SAN NICOLAS","Cantidad":216736},
+{"Barrio":"BALVANERA","Cantidad":168794},
+{"Barrio":"CABALLITO","Cantidad":142845},
+{"Barrio":"ALMAGRO","Cantidad":137328},
+{"Barrio":"BELGRANO","Cantidad":121635},
+{"Barrio":"MONSERRAT","Cantidad":112211},
+{"Barrio":"VILLA CRESPO","Cantidad":101663},
+{"Barrio":"RETIRO","Cantidad":83085},
+{"Barrio":"FLORES","Cantidad":73970},
+{"Barrio":"VILLA URQUIZA","Cantidad":61345},
+{"Barrio":"COLEGIALES","Cantidad":53037},
+{"Barrio":"CHACARITA","Cantidad":40977},
+{"Barrio":"CONSTITUCION","Cantidad":38122},
+{"Barrio":"NUÑEZ","Cantidad":37423},
+{"Barrio":"VILLA DEVOTO","Cantidad":36945},
+{"Barrio":"SAN TELMO","Cantidad":36710},
+{"Barrio":"BARRACAS","Cantidad":33722},
+{"Barrio":"SAN CRISTOBAL","Cantidad":33451},
+{"Barrio":"BOEDO","Cantidad":32735},
+{"Barrio":"VILLA DEL PARQUE","Cantidad":31195},
+{"Barrio":"SAAVEDRA","Cantidad":30921},
+{"Barrio":"PARQUE CHACABUCO","Cantidad":28174},
+{"Barrio":"VILLA GRAL. MITRE","Cantidad":24630},
+{"Barrio":"PARQUE PATRICIOS","Cantidad":24564},
+{"Barrio":"VILLA ORTUZAR","Cantidad":23236},
+{"Barrio":"MATADEROS","Cantidad":21798},
+{"Barrio":"NUEVA POMPEYA","Cantidad":20168},
+{"Barrio":"FLORESTA","Cantidad":19759},
+{"Barrio":"VILLA SANTA RITA","Cantidad":17767},
+{"Barrio":"VILLA PUEYRREDON","Cantidad":17564},
+{"Barrio":"LINIERS","Cantidad":17334},
+{"Barrio":"BOCA","Cantidad":16914},
+{"Barrio":"VILLA LUGANO","Cantidad":15915},
+{"Barrio":"MONTE CASTRO","Cantidad":15775},
+{"Barrio":"PARQUE AVELLANEDA","Cantidad":15247},
+{"Barrio":"VELEZ SARSFIELD","Cantidad":15102},
+{"Barrio":"PATERNAL","Cantidad":13529},
+{"Barrio":"PARQUE CHAS","Cantidad":12500},
+{"Barrio":"VILLA LURO","Cantidad":12327},
+{"Barrio":"COGHLAN","Cantidad":10955},
+{"Barrio":"AGRONOMIA","Cantidad":10171},
+{"Barrio":"PUERTO MADERO","Cantidad":9799},
+{"Barrio":"VILLA SOLDATI","Cantidad":8795},
+{"Barrio":"VILLA REAL","Cantidad":7907},
+{"Barrio":"VERSALLES","Cantidad":4782},
+{"Barrio":"VILLA RIACHUELO","Cantidad":4621}]
+  // instantiate d3plus
+
+  
+   var visualization = d3plus.viz()
+    .container("#viz2")  // container DIV to hold the visualization
+    .data(sample_data)  // data to use with the visualization
+    .type("bar")   // visualization type
+    .id("Barrio")         // key for which our data is unique on
+   .y ("Cantidad")
+   .x ("Barrio")
+   .size ("Cantidad")
+     
+         // sizing of blocks
+    .draw() 
+   // finally, draw the visualization!
+
+</script>
