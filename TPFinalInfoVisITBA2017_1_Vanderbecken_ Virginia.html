@@ -122,3 +122,54 @@
    // finally, draw the visualization!
 
 </script>
+
+  
+      
+<!-- load D3js -->
+<script src="//d3plus.org/js/d3.js"></script>
+
+<!-- load D3plus after D3js -->
+<script src="//d3plus.org/js/d3plus.js"></script>
+
+<!-- create container element for visualization -->
+
+<h1>Cantidad de consultas por fecha</h1>
+  <div id="viz3"></div>
+<script>
+  // sample data array
+  var sample_data = [{"Fecha":"27/07/2014","Cantidad":53.709},
+{"Fecha":"28/07/2014","Cantidad":147535},
+{"Fecha":"29/07/2014","Cantidad":148483},
+{"Fecha":"30/07/2014","Cantidad":152481},
+{"Fecha":"31/07/2014","Cantidad":144119},
+{"Fecha":"01/08/2014","Cantidad":141579},
+{"Fecha":"02/08/2014","Cantidad":82603},
+{"Fecha":"03/08/2014","Cantidad":63407},
+{"Fecha":"04/08/2014","Cantidad":151463},
+{"Fecha":"05/08/2014","Cantidad":153666},
+{"Fecha":"06/08/2014","Cantidad":152192},
+{"Fecha":"07/08/2014","Cantidad":154444},
+{"Fecha":"08/08/2014","Cantidad":153855},
+{"Fecha":"09/08/2014","Cantidad":90951},
+{"Fecha":"10/08/2014","Cantidad":64381},
+{"Fecha":"11/08/2014","Cantidad":155247},
+{"Fecha":"12/08/2014","Cantidad":153146},
+{"Fecha":"13/08/2014","Cantidad":162371},
+{"Fecha":"14/08/2014","Cantidad":148467},
+{"Fecha":"15/08/2014","Cantidad":84522}]
+  // instantiate d3plus
+
+  
+   var visualization = d3plus.viz()
+    .container("#viz3")  // container DIV to hold the visualization
+    .data(sample_data)  // data to use with the visualization
+    .type("line")   // visualization type
+    .id("Fecha")         // key for which our data is unique on
+   .text("Fecha")
+   .y ("Cantidad")
+   .x ("Fecha")
+     // sizing of blocks
+    .draw() 
+   // finally, draw the visualization!
+
+</script>
