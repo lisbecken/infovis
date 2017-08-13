@@ -168,7 +168,13 @@
    .time("Fecha")
    .y ("Cantidad")
    .x ("Fecha")
-     // sizing of blocks
+    .type({
+    "value": "box",
+    "mode": "extent" // changes box/whisker from tukey to extent mode
+  })
+   .timeline({
+        "align":"center",
+        "value":true})
     .draw() 
    // finally, draw the visualization!
 
