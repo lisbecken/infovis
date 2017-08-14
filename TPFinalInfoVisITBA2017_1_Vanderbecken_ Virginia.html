@@ -1,11 +1,11 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
-<title>Busquedas por comuna</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
 </head>
 <body>
-<meta charset="utf-8">
-
 <!-- load D3js -->
 <script src="//d3plus.org/js/d3.js"></script>
 
@@ -14,33 +14,39 @@
 
 <!-- create container element for visualization -->
 <div id="viz"></div>
-
+<div id="barrio"></div>
+<div id="tm"></div>
 <script>
   // sample data array
-  var sample_data = [
-    {"comuna":"1","Cantidad":496736},
-{"comuna":"15","Cantidad":202076},
-{"comuna":"7","Cantidad":102144},
-{"comuna":"2","Cantidad":227244},
-{"comuna":"14","Cantidad":316242},
-{"comuna":"5","Cantidad":170063},
-{"comuna":"10","Cantidad":75652},
-{"comuna":"9","Cantidad":54379},
-{"comuna":"11","Cantidad":110537},
-{"comuna":"4","Cantidad":95368},
-{"comuna":"13","Cantidad":212095},
-{"comuna":"6","Cantidad":142845},
-{"comuna":"8","Cantidad":29331},
-{"comuna":"12","Cantidad":120785},
-{"comuna":"3","Cantidad":202245}]
+
+
+  
   // instantiate d3plus
   var visualization = d3plus.viz()
     .container("#viz")  // container DIV to hold the visualization
-    .data(sample_data)  // data to use with the visualization
+    .data("https://lisbecken.github.io/infovis/Consultas_Comuna.json")  // data to use with the visualization
     .type("tree_map")   // visualization type
     .id("comuna")         // key for which our data is unique on
     .size("Cantidad")      // sizing of blocks
   .title ("Cantidad de Consultas por Comuna")
+
+    .draw()             // finally, draw the visualization!
+  
+
+  
+    // sample data array
+
+  // instantiate d3plus
+  var visualization = d3plus.viz()
+    .container("#barrio")  // container DIV to hold the visualization
+    .data("https://lisbecken.github.io/infovis/Consultas_barrio.json")  // data to use with the visualization
+    .type("bar")   // visualization type
+    .id("barrio")         // key for which our data is unique on
+    .y("Cantidad")      // sizing of blocks
+  .x ("barrio")
+  .title ("Cantidad de Consultas por Barrio")
+
     .draw()             // finally, draw the visualization!
 </script>
-
+</body>
+</html>
