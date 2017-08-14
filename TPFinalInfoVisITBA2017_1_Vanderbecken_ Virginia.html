@@ -59,6 +59,21 @@
   .title ("Consultas promedio por dia de la semana")
 
     .draw()                // finally, draw the visualization!
+      
+      var visualization = d3plus.viz()
+    .container("#diabox")
+    .data("https://lisbecken.github.io/infovis/Dia.json")
+    .type("box")
+    .id("Dia")
+    .x("Dia")
+    .y("Cantidad")
+    
+    .ui([{ 
+        "label": "Visualization Type",
+        "method": "type", 
+        "value": ["scatter","box","bar"]
+      }])
+    .draw()     
     
 </script>
 </body>
