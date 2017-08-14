@@ -11,11 +11,12 @@
 
 <!-- load D3plus after D3js -->
 <script src="//d3plus.org/js/d3plus.js"></script>
-
 <!-- create container element for visualization -->
 <div id="viz"></div>
 <div id="barrio"></div>
-<div id="tm"></div>
+<div id="Fecha"></div>
+<div id="BarrioComu"></div> 
+  
 <script>
   // sample data array
 
@@ -47,6 +48,18 @@
   .title ("Cantidad de Consultas por Barrio")
 
     .draw()             // finally, draw the visualization!
+  
+    var visualization = d3plus.viz()
+    .container("#Fecha")  // container DIV to hold the visualization
+    .data("https://lisbecken.github.io/infovis/Fecha.json")  // data to use with the visualization
+    .type("bar")   // visualization type
+    .id("Fecha")         // key for which our data is unique on
+    .y("Cantidad")      // sizing of blocks
+  .x ("Fecha")
+  .title ("Cantidad de Consultas por Fecha")
+
+    .draw()             // finally, draw the visualization!
+    
 </script>
 </body>
 </html>
