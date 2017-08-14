@@ -14,7 +14,7 @@
 <!-- create container element for visualization -->
 <div id="viz"></div>
 <div id="barrio"></div>
-<div id="Fecha"></div>
+<div id="Dia"></div>
 <div id="BarrioComu"></div> 
   
 <script>
@@ -49,17 +49,16 @@
 
     .draw()             // finally, draw the visualization!
   
-    var visualization = d3plus.viz()
-    .container("#Fecha")  // container DIV to hold the visualization
-    .data("https://lisbecken.github.io/infovis/Fecha.json")  // data to use with the visualization
-    .type("line")   // visualization type
-    .id("Fecha")         // key for which our data is unique on
-    .y("Cantidad")      // sizing of blocks
-  .x ("Fecha")
-  .title ("Cantidad de Consultas por Fecha")
-    .time ("Fecha")
+      var visualization = d3plus.viz()
+    .container("#Dia")  // container DIV to hold the visualization
+    .data("https://lisbecken.github.io/infovis/Dia.json")  // data to use with the visualization
+    .type("pie")   // visualization type
+    .id("Dia")         // key for which our data is unique on
+    .size("Cantidad")      // sizing of blocks
+  .x ("Dia")
+  .title ("Consultas promedio por dia de la semana")
 
-    .draw()             // finally, draw the visualization!
+    .draw()                // finally, draw the visualization!
     
 </script>
 </body>
