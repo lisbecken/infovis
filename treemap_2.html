@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+</head>
+<body>
+<!doctype html>
+<meta charset="utf-8">
+
+<!-- load D3js -->
+<script src="//d3plus.org/js/d3.js"></script>
+
+<!-- load D3plus after D3js -->
+<script src="//d3plus.org/js/d3plus.js"></script>
+
+<!-- create container element for visualization -->
+<div id="viz"></div>
+
+<script>
+  // sample data array
+  var sample_data = [{"Sender":"Eminent","cantidad":37},
+{"Sender":"Masivas","cantidad":21},
+{"Sender":"Move","cantidad":14},
+{"Sender":"NyP","cantidad":1},
+{"Sender":"Prefer","cantidad":22},
+{"Sender":"Quiero","cantidad":27}]
+  var sample_data2 = [{"Sender":"Eminent","Enviados":1630224},
+{"Sender":"Masivas","Enviados":963974},
+{"Sender":"Move","Enviados":80246},
+{"Sender":"NyP","Enviados":5336},
+{"Sender":"Prefer","Enviados":696740},
+{"Sender":"Quiero","Enviados":3048117}]
+  var sample_data3 =
+  [{"Sender":"Eminent","Apertura":0.372725377},
+{"Sender":"Masivas","Apertura":0.325037636},
+{"Sender":"Move","Apertura":0.277836918},
+{"Sender":"NyP","Apertura":0.364301802},
+{"Sender":"Prefer","Apertura":0.322811645},
+{"Sender":"Quiero","Apertura":0.333598757}]
+
+  // instantiate d3plus
+  var visualization = d3plus.viz()
+    .container("#viz")  // container DIV to hold the visualization
+    .data(sample_data)  // data to use with the visualization
+    .type("tree_map")   // visualization type
+    .id("Sender")         // key for which our data is unique on
+    .size("cantidad")      // sizing of blocks
+    .draw()             // finally, draw the visualization!
+  .title ("Campañas por Sender")
+  var visualization = d3plus.viz()
+    .container("#viz")  // container DIV to hold the visualization
+    .data(sample_data2)  // data to use with the visualization
+    .type("tree_map")   // visualization type
+    .id("Sender")         // key for which our data is unique on
+    .size("Enviados")      // sizing of blocks
+    .draw()             // finally, draw the visualization!
+.title ("Cantidad de clientes")
+   var visualization = d3plus.viz()
+    .container("#viz")  // container DIV to hold the visualization
+    .data(sample_data3)  // data to use with the visualization
+    .type("tree_map")   // visualization type
+    .id("Sender")         // key for which our data is unique on
+    .size("Apertura")      // sizing of blocks
+    .draw()             // finally, draw the visualization!
+.title ("Apertura")
+  
+  </script>
+</script>
+</body>
+</html>
