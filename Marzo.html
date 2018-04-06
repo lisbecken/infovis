@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+</head>
+<body>
+<!doctype html>
+<meta charset="utf-8">
+
+<!-- load D3js -->
+<script src="//d3plus.org/js/d3.js"></script>
+
+<!-- load D3plus after D3js -->
+<script src="//d3plus.org/js/d3plus.js"></script>
+
+<!-- create container element for visualization -->
+<div id="viz"></div>
+
+<script>
+  // sample data array
+  var sample_data = [{"Rubro":"Indumentaria","Cantidad":42},
+{"Rubro":"Espectáculos","Cantidad":18},
+{"Rubro":"Quiero","Cantidad":17},
+{"Rubro":"Hogar","Cantidad":12},
+{"Rubro":"Gastronomía","Cantidad":10},
+{"Rubro":"Viajes","Cantidad":8},
+{"Rubro":"NyP","Cantidad":7},
+{"Rubro":"Quiero Viajes","Cantidad":6},
+{"Rubro":"Extra Cash","Cantidad":4},
+{"Rubro":"Farmacity","Cantidad":4},
+{"Rubro":"Jugueterías","Cantidad":2},
+{"Rubro":"Supermercado","Cantidad":1}]
+  var sample_data2 = [{"Rubro":"Espectáculos","Enviados":739523},
+{"Rubro":"Extra Cash","Enviados":111321},
+{"Rubro":"Farmacity","Enviados":102509},
+{"Rubro":"Gastronomía","Enviados":300347},
+{"Rubro":"Hogar","Enviados":346712},
+{"Rubro":"Indumentaria","Enviados":1439102},
+{"Rubro":"Jugueterías","Enviados":24429},
+{"Rubro":"Quiero","Enviados":2137286},
+{"Rubro":"Quiero Viajes","Enviados":474281},
+{"Rubro":"Supermercado","Enviados":196331},
+{"Rubro":"Viajes","Enviados":552796}]
+  // instantiate d3plus
+  var visualization = d3plus.viz()
+    .container("#viz")  // container DIV to hold the visualization
+    .data(sample_data)  // data to use with the visualization
+    .type("tree_map")   // visualization type
+    .id("Rubro")         // key for which our data is unique on
+    .size("Cantidad")      // sizing of blocks
+    .draw()             // finally, draw the visualization!
+  .title ("Campañas por rubro")
+  var visualization = d3plus.viz()
+    .container("#viz")  // container DIV to hold the visualization
+    .data(sample_data2)  // data to use with the visualization
+    .type("tree_map")   // visualization type
+    .id("Rubro")         // key for which our data is unique on
+    .size("Enviados")      // sizing of blocks
+    .draw()             // finally, draw the visualization!
+.title ("Cantidad de clientes")
+  </script>
+</script>
+</body>
+</html>
