@@ -43,6 +43,18 @@
 {"Rubro":"Quiero Viajes","Enviados":474281},
 {"Rubro":"Supermercado","Enviados":196331},
 {"Rubro":"Viajes","Enviados":552796}]
+  var sample_data3 =
+  [{"Rubro":"Espectáculos"," Apertura":0.352283922},
+{"Rubro":"Extra Cash"," Apertura":0.401198429},
+{"Rubro":"Farmacity"," Apertura":0.38442751},
+{"Rubro":"Gastronomía"," Apertura":0.345253446},
+{"Rubro":"Hogar"," Apertura":0.263724949},
+{"Rubro":"Indumentaria"," Apertura":0.342603416},
+{"Rubro":"Jugueterías"," Apertura":0.270946632},
+{"Rubro":"Quiero"," Apertura":0.346679937},
+{"Rubro":"Quiero Viajes"," Apertura":0.341906771},
+{"Rubro":"Supermercado"," Apertura":0.26600955},
+{"Rubro":"Viajes"," Apertura":0.35013529}]
   // instantiate d3plus
   var visualization = d3plus.viz()
     .container("#viz")  // container DIV to hold the visualization
@@ -60,6 +72,15 @@
     .size("Enviados")      // sizing of blocks
     .draw()             // finally, draw the visualization!
 .title ("Cantidad de clientes")
+   var visualization = d3plus.viz()
+    .container("#viz")  // container DIV to hold the visualization
+    .data(sample_data3)  // data to use with the visualization
+    .type("tree_map")   // visualization type
+    .id("Rubro")         // key for which our data is unique on
+    .size(" Apertura")      // sizing of blocks
+    .draw()             // finally, draw the visualization!
+.title ("Apertura")
+  
   </script>
 </script>
 </body>
